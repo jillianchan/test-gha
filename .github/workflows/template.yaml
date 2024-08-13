@@ -1,6 +1,6 @@
 name: "Template Workflow"
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       GHA_ENV:
         required: true

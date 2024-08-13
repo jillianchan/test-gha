@@ -6,7 +6,7 @@ jobs:
   run_python:
      name: "Run Python Step"
      runs-on: "ubuntu-latest"
-     uses: ./.github/workflows/tmpl.yaml
+     uses: ./.github/workflows/template.yaml
      with:
        GHA_ENV: gha-dev
      secrets:
