@@ -1,0 +1,37 @@
+name: "Template Workflow"
+on:
+  workflow_dispatch:
+    inputs:
+      GHA_ENV:
+        required: true
+        type: string
+    secrets:
+      SECRET:
+        required: true
+
+jobs:
+  python_run:
+    name: "Python Run Step"
+    runs-on: "ubuntu-latest"
+    environment: ${{ inputs.GHA_ENV }}
+    steps:
+      - name: "Check out repo"
+        uses: actions/checkout@v3
+
+      - name: "Setup Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: "Run Python"
+        run: |
+          python3 src/function.py --num_a ${{ vars.NUM_A }} --num_b {{ vars.NUM_B }}
+
+  print_secret:
+    name: "Print Secret Step"
+    needs: python_run
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Print Secret"
+        run: |
+          echo "The secret is: ${{ secrets.SECRET }}"

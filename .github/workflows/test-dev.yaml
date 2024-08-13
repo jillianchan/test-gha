@@ -1,0 +1,13 @@
+name: "Dev Test Workflow"
+on:
+  workflow_dispatch:
+
+jobs:
+  run_python:
+     name: "Run Python Step"
+     runs-on: "ubuntu-latest"
+     uses: ./.github/workflows/templates/tmpl.yaml
+     with:
+       GHA_ENV: gha-dev
+     secrets:
+       SECRET: ${{ secrets.SECRET }}
