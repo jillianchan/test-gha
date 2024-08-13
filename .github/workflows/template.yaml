@@ -30,6 +30,7 @@ jobs:
   print_secret:
     name: "Print Secret Step"
     needs: python_run
+    environment: ${{ inputs.GHA_ENV }}
     runs-on: "ubuntu-latest"
     steps:
       - name: "Print Secret"
