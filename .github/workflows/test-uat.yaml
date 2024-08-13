@@ -1,4 +1,4 @@
-name: "Dev Test Workflow"
+name: "UAT Test Workflow"
 on:
   workflow_dispatch:
 
