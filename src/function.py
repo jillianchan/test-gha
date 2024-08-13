@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 import argparse
-import os
 
 
 def main(args):
     print(f"num_a: {args.num_a}")
     print(f"num_b: {args.num_b}")
     print(f"sum: {args.num_a + args.num_b}")
-
-    secret = os.getenv('SECRET_VALUE')
-    print(f"\nsecret value: {secret}")
-    print("test secret1")
 
 
 def parse_arguments():
