@@ -25,7 +25,7 @@ jobs:
 
       - name: "Run Python"
         run: |
-          python3 src/function.py --num_a ${{ vars.NUM_A }} --num_b {{ vars.NUM_B }}
+          python3 src/function.py --num_a ${{ vars.NUM_A }} --num_b ${{ vars.NUM_B }}
 
   print_secret:
     name: "Print Secret Step"
