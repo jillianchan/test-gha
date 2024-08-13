@@ -31,7 +31,9 @@ jobs:
     name: "Print Secret Step"
     needs: python_run
     runs-on: "ubuntu-latest"
+    env:
+      SECRET_VALUE: ${{ secrets.SECRET }}
     steps:
       - name: "Print Secret"
         run: |
-          echo "The secret is: ${{ secrets.SECRET }}"
+          echo "The secret is: $SECRET_VALUE"

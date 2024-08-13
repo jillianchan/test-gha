@@ -1,0 +1,12 @@
+name: "Dev Test Workflow"
+on:
+  workflow_dispatch:
+
+jobs:
+  run_python:
+    name: "Run Python Step"
+    uses: ./.github/workflows/template.yaml
+    with:
+      GHA_ENV: gha-uat
+    secrets:
+      SECRET: ${{ secrets.SECRET }}
