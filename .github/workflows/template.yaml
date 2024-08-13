@@ -24,16 +24,16 @@ jobs:
           python-version: '3.x'
 
       - name: "Run Python"
+        env:
+          SECRET_VALUE: ${{ secrets.SECRET }}
         run: |
           python3 src/function.py --num_a ${{ vars.NUM_A }} --num_b ${{ vars.NUM_B }}
 
-  print_secret:
+  print_end:
     name: "Print Secret Step"
     needs: python_run
     runs-on: "ubuntu-latest"
-    env:
-      SECRET_VALUE: ${{ secrets.SECRET }}
     steps:
-      - name: "Print Secret"
+      - name: "Print End"
         run: |
-          echo "The secret is: $SECRET_VALUE"
+          echo "Workflow End"
