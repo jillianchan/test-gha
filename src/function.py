@@ -10,6 +10,7 @@ def main(args):
 
     secret = os.getenv('SECRET_VALUE')
     print(f"\nsecret value: {secret}")
+    print("test secret1")
 
 
 def parse_arguments():
